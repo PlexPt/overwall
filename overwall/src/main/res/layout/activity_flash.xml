@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:background="@color/colorAccent"
+              android:orientation="vertical">
+
+
+    <TextView
+        android:id="@+id/textView_flash"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:text="overwall"
+        android:textColor="#ffffff"
+        android:textSize="90sp"/>
+
+    <com.roger.match.library.MatchTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="OVER WALL"
+        tools:textColor="#ffffff"
+        tools:textSize="30sp"/>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp">
+
+        <com.q42.android.scrollingimageview.ScrollingImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            app:randomness="@array/randomness"
+            app:speed="3dp"
+            app:src="@array/random_imgs"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal|bottom"
+            android:src="@drawable/van"/>
+    </FrameLayout>
+</LinearLayout>

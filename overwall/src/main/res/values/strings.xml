@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">OverWall</string>
+
+    <!-- Strings related to login -->
+
+    <string name="menu_settings">设置</string>
+    <string name="prompt_email">邮箱</string>
+    <string name="prompt_emailtest">输入注册时的邮箱</string>
+    <string name="prompt_password">密码</string>
+    <string name="action_register">注册</string>
+    <string name="action_sign_in">登录</string>
+    <string name="action_sign_in_short">登录</string>
+    <string name="error_invalid_email">你在逗我？这是邮箱</string>
+    <string name="error_invalid_password">你确定密码输入完了？</string>
+    <string name="error_incorrect_password">不好意思，密码错了</string>
+    <string name="error_field_required">你在逗我？这这这啥都没有！</string>
+    <string name="pay_1">注意！\n邀请码请给认识的需要的人。\n邀请有记录，若被邀请的人违反用户协议，您将会有连带责任。</string>
+    <string name="pay_2">说明\n邀请码暂时无法购买，请珍惜。\n您每拉一位用户注册，当TA充值时您就会获得TA充值金额的 10 % 的提成。</string>
+    <string name="pay_3">邀请\n当前您每天可以生成1个邀请码。冷却时间24小时。</string>
+    <string name="permission_rationale">Contacts permissions are needed for providing email completions.</string>
+    <string name="pay">请点击支付宝付款进行充值，或者直接填支付宝账号17080035800。\n付款后10秒内系统自动到账。\n目前汇率1人民币=1爱墙币</string>
+    <string name="alipay_code">#吱口令#长按复制此条消息，打开支付宝即可添加我为好友m1FB6W00Ey</string>
+    <string name="title_activity_err">ErrActivity</string>
+
+</resources>

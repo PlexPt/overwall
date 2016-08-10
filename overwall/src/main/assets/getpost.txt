@@ -1,0 +1,34 @@
+5.1 用GET方式请求网络资源：
+
+new VolleyRequestUtil().RequestGet(this, "http://ce.sysu.edu.cn/hope/", "hopePage", 
+    new VolleyListenerInterface(this, VolleyListenerInterface.mListener, VolleyListenerInterface.mErrorListener) {
+    // Volley请求成功时调用的函数
+    @Override
+    public void onMySuccess(String result) {
+        Toast.makeText(this, s, Toast.LENGTH_LONG).show();
+    }
+
+    // Volley请求失败时调用的函数
+    @Override
+    public void onMyError(VolleyError error) {
+        // ...
+    }
+});
+输出：厚朴网站首页的源代码。
+5.2 用POST方式请求网络资源：
+
+new VolleyRequestUtil().RequestPOST(this, "http://ce.sysu.edu.cn/hope/", "hopePage", 
+    new VolleyListenerInterface(this, VolleyListenerInterface.mListener, VolleyListenerInterface.mErrorListener) {
+    // Volley请求成功时调用的函数
+    @Override
+    public void onMySuccess(String result) {
+        Toast.makeText(MainActivity.this, result, Toast.LENGTH_LONG).show();
+    }
+
+    // Volley请求失败时调用的函数
+    @Override
+    public void onMyError(VolleyError error) {
+        // ...
+    }
+});
+输出：厚朴网站首页的源代码。

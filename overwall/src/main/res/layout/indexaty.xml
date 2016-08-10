@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="fill_parent"
+	android:layout_height="fill_parent"
+	android:orientation="vertical">
+
+	<Button
+		android:layout_height="wrap_content"
+		android:text="取个人信息"
+		android:layout_width="match_parent"
+		android:id="@+id/indexatyButton1"/>
+
+	<Button
+		android:layout_height="wrap_content"
+		android:text="取节点"
+		android:layout_width="match_parent"
+		android:id="@+id/indexatyButton2"/>
+    <android.support.v7.widget.CardView 
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/cardview"
+        app:cardCornerRadius="8dp"
+        app:cardBackgroundColor="#233333"
+        android:layout_margin="8dp"
+        android:layout_height="80dp"
+        android:clickable="true"
+        android:foreground="?android:attr/selectableItemBackground"
+        android:layout_width="match_parent">
+
+        <TextView
+            android:text="蜜汁斜眼"
+            android:layout_gravity="center"
+            android:textSize="26sp"
+            android:textColor="#EEEEEE"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </android.support.v7.widget.CardView>
+	<ScrollView
+		android:layout_height="wrap_content"
+		android:layout_width="match_parent"
+		android:layout_weight="1.0">
+
+		<EditText
+			android:layout_height="wrap_content"
+			android:ems="10"
+			android:layout_width="match_parent"
+			android:id="@+id/indexatyEditText1"/>
+
+	</ScrollView>
+
+</LinearLayout>
+
