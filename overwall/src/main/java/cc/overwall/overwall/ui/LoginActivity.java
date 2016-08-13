@@ -18,10 +18,8 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.android.volley.Request;
-import com.android.volley.Response;
-import com.android.volley.VolleyError;
-import com.android.volley.toolbox.JsonObjectRequest;
+import com.zhy.http.okhttp.OkHttpUtils;
+import com.zhy.http.okhttp.callback.StringCallback;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -31,15 +29,14 @@ import java.util.Map;
 
 import cc.overwall.overwall.App;
 import cc.overwall.overwall.R;
-import cc.overwall.overwall.Utils.Tools;
+import okhttp3.Call;
+import okhttp3.MediaType;
 
 
 public class LoginActivity extends AppCompatActivity {
 
     private static final String API = "https://www.overwall.cc/api/token";
-
-
-    // UI references.
+    
     private AppCompatAutoCompleteTextView mEmailView;
     private EditText mPasswordView;
     private View mProgressView;
@@ -55,7 +52,11 @@ public class LoginActivity extends AppCompatActivity {
             
            toMain();
         }
+        mLoginFormView = findViewById(R.id.login_form);
+        mProgressView = findViewById(R.id.login_progress);
         mEmailView = (AppCompatAutoCompleteTextView) findViewById(R.id.email);
+     
+
         findViewById(R.id.register_button)
                 .setOnClickListener(new OnClickListener() {
                     @Override
@@ -87,8 +88,7 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
 
-        mLoginFormView = findViewById(R.id.login_form);
-        mProgressView = findViewById(R.id.login_progress);
+       
     }
 
     private void toMain() {
@@ -155,8 +155,31 @@ public class LoginActivity extends AppCompatActivity {
         map.put("email", email);
         map.put("passwd", passwd);
 
+        OkHttpUtils.postString()
+                .url(API)
+                .mediaType(MediaType.parse("application/json; charset=utf-8"))
+                .content(new JSONObject(map).toString())
+                .build()
+                .execute(new StringCallback() {
+                    @Override
+                    public void onError(Call call, Exception e, int i) {
 
-        JsonObjectRequest newMissRequest = new JsonObjectRequest(
+                    }
+
+                    @Override
+                    public void onResponse(String s, int i) {
+
+                        JSONObject jsonobj = null;
+                        try {
+                            jsonobj = new JSONObject(s);
+                            deal(jsonobj);
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+
+                    }
+                });
+       /* JsonObjectRequest newMissRequest = new JsonObjectRequest(
                 Request.Method.POST, API,
                 new JSONObject(map), new Response.Listener<JSONObject>() {
 
@@ -180,8 +203,8 @@ public class LoginActivity extends AppCompatActivity {
         App.mQueue.add(newMissRequest);
 
 
+    */
     }
-
     private boolean isEmailValid(String email) {
 
         return email.contains("@");
@@ -192,9 +215,7 @@ public class LoginActivity extends AppCompatActivity {
         return password.length() > 6;
     }
 
-    /**
-     * Shows the progress UI and hides the login form.
-     */
+
     @TargetApi(Build.VERSION_CODES.HONEYCOMB_MR2)
     private void showProgress(final boolean show) {
         // On Honeycomb MR2 we have the ViewPropertyAnimator APIs, which allow
@@ -227,7 +248,6 @@ public class LoginActivity extends AppCompatActivity {
             mLoginFormView.setVisibility(show ? View.GONE : View.VISIBLE);
         }
     }
-
     private void deal(JSONObject jsonobj)
 
     {
@@ -240,14 +260,18 @@ public class LoginActivity extends AppCompatActivity {
                 ed.putInt("user_id", user_id);
                 ed.putString("token", TOKEN);
                 ed.commit();
-
-
                 toMain();
-            } else {
-                Toast.makeText(LoginActivity.this, jsonobj.getString("msg"), Toast.LENGTH_LONG).show();
 
+                
+            }
+            else {
+                showProgress(false);
+                 Toast.makeText(LoginActivity.this, jsonobj.getString("msg"), Toast.LENGTH_LONG).show();
             }
         } catch (JSONException e) {
+            showProgress(false);
+            Toast.makeText(LoginActivity.this, "网络太差", Toast.LENGTH_LONG).show();
+
         }
     }
 }

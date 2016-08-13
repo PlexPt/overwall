@@ -4,8 +4,8 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 
-import cc.overwall.overwall.ui.Fragment0;
 import cc.overwall.overwall.ui.Fragment1;
+import cc.overwall.overwall.ui.Fragment0;
 import cc.overwall.overwall.ui.Fragment2;
 import cc.overwall.overwall.ui.Fragment3;
 
@@ -24,9 +24,9 @@ public class ViewPagerAdapter extends FragmentPagerAdapter {
         switch (position) {
             // Open FragmentTab1.java
             case 0:
-                return Fragment1.newInstance(position);
-            case 1:
                 return Fragment0.newInstance(position);
+            case 1:
+                return Fragment1.newInstance(position);
             case 2:
                 return Fragment2.newInstance(position);
             case 3:

@@ -4,27 +4,33 @@
               xmlns:tools="http://schemas.android.com/tools"
               android:layout_width="match_parent"
               android:layout_height="match_parent"
-              android:background="@color/colorAccent"
+              android:background="#233333"
               android:orientation="vertical">
 
 
-    <TextView
-        android:id="@+id/textView_flash"
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_weight="1"
-        android:gravity="center"
-        android:text="overwall"
-        android:textColor="#ffffff"
-        android:textSize="90sp"/>
+        android:layout_height="0dp"
+        android:layout_weight="1">
 
-    <com.roger.match.library.MatchTextView
+        <com.roger.match.library.MatchTextView
+            android:id="@+id/textView_flash"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            app:text="OverWall"
+            app:textColor="#ffffff"
+            app:textSize="20sp"/>
+    </RelativeLayout>
+
+    <com.roger.match.library.MatchButton
+        android:id="@+id/mButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        tools:text="OVER WALL"
-        tools:textColor="#ffffff"
-        tools:textSize="30sp"/>
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="20dp"
+        app:text="YES"/>
 
     <FrameLayout
         android:layout_width="match_parent"
@@ -35,9 +41,15 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom"
-            app:randomness="@array/randomness"
-            app:speed="3dp"
-            app:src="@array/random_imgs"/>
+            app:speed="1dp"
+            app:src="@drawable/scrolling_background"/>
+
+        <com.q42.android.scrollingimageview.ScrollingImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            app:speed="1.9dp"
+            app:src="@drawable/scrolling_foreground"/>
 
         <ImageView
             android:layout_width="wrap_content"

@@ -1,182 +1,190 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              xmlns:tools="http://schemas.android.com/tools"
-              android:layout_width="match_parent"
-              android:layout_height="match_parent"
-              android:orientation="vertical">
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
 
-    <android.support.v7.widget.CardView
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        android:id="@+id/btn_topay"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="3dp"
-        android:clickable="true"
-        android:foreground="?android:attr/selectableItemBackground"
-        app:cardBackgroundColor="#00897B"
-        app:cardCornerRadius="3dp"
-        app:cardElevation="5dp">
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
-        <TextView
-            android:layout_width="wrap_content"
+        <android.support.v7.widget.CardView
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/btn_topay"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_margin="8dp"
-            android:layout_marginLeft="18dp"
-            android:drawableLeft="@drawable/ic_remote"
-            android:gravity="center"
-            android:text=" 充值"
-            android:textColor="#EEEEEE"
-            android:textSize="30sp"/>
-    </android.support.v7.widget.CardView>
+            android:layout_margin="3dp"
+            android:clickable="true"
+            android:foreground="?android:attr/selectableItemBackground"
+            app:cardBackgroundColor="#00897B"
+            app:cardCornerRadius="3dp"
+            app:cardElevation="5dp">
 
-    <android.support.v7.widget.CardView
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        android:id="@+id/btn_toshop"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="3dp"
-        android:clickable="true"
-        android:foreground="?android:attr/selectableItemBackground"
-        app:cardBackgroundColor="#E91E63"
-        app:cardCornerRadius="3dp"
-        app:cardElevation="5dp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="8dp"
+                android:layout_marginLeft="18dp"
+                android:drawableLeft="@drawable/ic_remote"
+                android:gravity="center"
+                android:text=" 充值"
+                android:textColor="#EEEEEE"
+                android:textSize="30sp"/>
+        </android.support.v7.widget.CardView>
 
-        <TextView
-            android:layout_width="wrap_content"
+        <android.support.v7.widget.CardView
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/btn_toshop"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_margin="8dp"
-            android:layout_marginLeft="18dp"
-            android:drawableLeft="@mipmap/ic_shop_white_48dp"
-            android:gravity="center"
-            android:text=" 商店"
-            android:textColor="#EEEEEE"
-            android:textSize="30sp"/>
-    </android.support.v7.widget.CardView>
+            android:layout_margin="3dp"
+            android:clickable="true"
+            android:foreground="?android:attr/selectableItemBackground"
+            app:cardBackgroundColor="#E91E63"
+            app:cardCornerRadius="3dp"
+            app:cardElevation="5dp">
 
-    <android.support.v7.widget.CardView
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        android:id="@+id/btn_toinvite"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="3dp"
-        android:clickable="true"
-        android:foreground="?android:attr/selectableItemBackground"
-        app:cardBackgroundColor="#4CAF50"
-        app:cardCornerRadius="3dp"
-        app:cardElevation="5dp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="8dp"
+                android:layout_marginLeft="18dp"
+                android:drawableLeft="@drawable/ic_shop_white_48dp"
+                android:gravity="center"
+                android:text=" 商店"
+                android:textColor="#EEEEEE"
+                android:textSize="30sp"/>
+        </android.support.v7.widget.CardView>
 
-        <TextView
-            android:layout_width="wrap_content"
+        <android.support.v7.widget.CardView
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/btn_toinvite"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_margin="8dp"
-            android:layout_marginLeft="18dp"
-            android:drawableLeft="@drawable/ic_human_male_female"
-            android:gravity="center"
-            android:text=" 邀请好友"
-            android:textColor="#EEEEEE"
-            android:textSize="30sp"/>
-    </android.support.v7.widget.CardView>
+            android:layout_margin="3dp"
+            android:clickable="true"
+            android:foreground="?android:attr/selectableItemBackground"
+            app:cardBackgroundColor="#4CAF50"
+            app:cardCornerRadius="3dp"
+            app:cardElevation="5dp">
 
-    <android.support.v7.widget.CardView
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        android:id="@+id/btn_toedit"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="3dp"
-        android:clickable="true"
-        android:foreground="?android:attr/selectableItemBackground"
-        app:cardBackgroundColor="#3F51B5"
-        app:cardCornerRadius="3dp"
-        app:cardElevation="5dp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="8dp"
+                android:layout_marginLeft="18dp"
+                android:drawableLeft="@drawable/ic_human_male_female"
+                android:gravity="center"
+                android:text=" 邀请好友"
+                android:textColor="#EEEEEE"
+                android:textSize="30sp"/>
+        </android.support.v7.widget.CardView>
 
-        <TextView
-            android:layout_width="wrap_content"
+        <android.support.v7.widget.CardView
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/btn_toedit"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_margin="8dp"
-            android:layout_marginLeft="18dp"
-            android:drawableLeft="@drawable/ic_transcribe"
-            android:gravity="center"
-            android:text=" 修改资料"
-            android:textColor="#EEEEEE"
-            android:textSize="30sp"/>
-    </android.support.v7.widget.CardView>
-    <android.support.v7.widget.CardView
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="3dp"
-        android:clickable="true"
-        android:foreground="?android:attr/selectableItemBackground"
-        app:cardBackgroundColor="#2196f3"
-        app:cardCornerRadius="3dp"
-        android:id="@+id/btn_download"
-        app:cardElevation="10dp">
+            android:layout_margin="3dp"
+            android:clickable="true"
+            android:foreground="?android:attr/selectableItemBackground"
+            app:cardBackgroundColor="#3F51B5"
+            app:cardCornerRadius="3dp"
+            app:cardElevation="5dp">
 
-        <TextView
-            android:layout_width="wrap_content"
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="8dp"
+                android:layout_marginLeft="18dp"
+                android:drawableLeft="@drawable/ic_transcribe"
+                android:gravity="center"
+                android:text=" 修改资料"
+                android:textColor="#EEEEEE"
+                android:textSize="30sp"/>
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/btn_download"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_margin="8dp"
-            android:layout_marginLeft="18dp"
-            android:gravity="center_vertical"
-            android:text=" 下载SSR"
-            android:drawableLeft="@android:drawable/stat_sys_download"
-            android:textColor="#EEEEEE"
-            android:textSize="30sp"/>
-    </android.support.v7.widget.CardView>
-    <android.support.v7.widget.CardView
+            android:layout_margin="3dp"
+            android:clickable="true"
+            android:foreground="?android:attr/selectableItemBackground"
+            app:cardBackgroundColor="#2196f3"
+            app:cardCornerRadius="3dp"
+            app:cardElevation="10dp">
 
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        android:id="@+id/btn_signout"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="3dp"
-        android:clickable="true"
-        android:foreground="?android:attr/selectableItemBackground"
-        app:cardBackgroundColor="#795548"
-        app:cardCornerRadius="3dp"
-        app:cardElevation="5dp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="8dp"
+                android:layout_marginLeft="18dp"
+                android:drawableLeft="@android:drawable/stat_sys_download"
+                android:gravity="center_vertical"
+                android:text=" 下载SSR"
+                android:textColor="#EEEEEE"
+                android:textSize="30sp"/>
+        </android.support.v7.widget.CardView>
 
-        <TextView
-            android:layout_width="wrap_content"
+        <android.support.v7.widget.CardView
+
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/btn_signout"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_margin="8dp"
-            android:layout_marginLeft="18dp"
-            android:drawableLeft="@drawable/ic_verified"
-            android:gravity="center"
-            android:text=" 注销"
-            android:textColor="#EEEEEE"
-            android:textSize="30sp"/>
-    </android.support.v7.widget.CardView>
+            android:layout_margin="3dp"
+            android:clickable="true"
+            android:foreground="?android:attr/selectableItemBackground"
+            app:cardBackgroundColor="#795548"
+            app:cardCornerRadius="3dp"
+            app:cardElevation="5dp">
 
-    <android.support.v7.widget.CardView
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="3dp"
-        android:clickable="true"
-        android:id="@+id/btn_toabout"
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="8dp"
+                android:layout_marginLeft="18dp"
+                android:drawableLeft="@drawable/ic_verified"
+                android:gravity="center"
+                android:text=" 注销"
+                android:textColor="#EEEEEE"
+                android:textSize="30sp"/>
+        </android.support.v7.widget.CardView>
 
-        android:foreground="?android:attr/selectableItemBackground"
-        app:cardBackgroundColor="#FF5722"
-        app:cardCornerRadius="3dp"
-        app:cardElevation="5dp">
-
-        <TextView
-            android:layout_width="wrap_content"
+        <android.support.v7.widget.CardView
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/btn_toabout"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_margin="8dp"
-            android:layout_marginLeft="18dp"
-            android:drawableLeft="@drawable/ic_tag_multiple"
-            android:gravity="center"
-            android:text=" 关于"
-            android:textColor="#EEEEEE"
-            android:textSize="30sp"/>
-    </android.support.v7.widget.CardView>
-</LinearLayout>
+            android:layout_margin="3dp"
+            android:clickable="true"
+
+            android:foreground="?android:attr/selectableItemBackground"
+            app:cardBackgroundColor="#FF5722"
+            app:cardCornerRadius="3dp"
+            app:cardElevation="5dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="8dp"
+                android:layout_marginLeft="18dp"
+                android:drawableLeft="@drawable/ic_tag_multiple"
+                android:gravity="center"
+                android:text=" 关于"
+                android:textColor="#EEEEEE"
+                android:textSize="30sp"/>
+        </android.support.v7.widget.CardView>
+    </LinearLayout>
+</ScrollView>

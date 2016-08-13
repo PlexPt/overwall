@@ -2,6 +2,7 @@ package cc.overwall.overwall.ui;
 
 
 import android.content.SharedPreferences;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -11,14 +12,10 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
-import android.widget.TextView;
 
-import com.android.volley.Request;
-import com.android.volley.Response;
-import com.android.volley.VolleyError;
-import com.android.volley.toolbox.JsonObjectRequest;
 import com.google.gson.Gson;
+import com.zhy.http.okhttp.OkHttpUtils;
+import com.zhy.http.okhttp.callback.StringCallback;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -28,10 +25,11 @@ import java.util.ArrayList;
 import cc.overwall.overwall.App;
 import cc.overwall.overwall.Bean.Node;
 import cc.overwall.overwall.Bean.NodeInfo;
-import cc.overwall.overwall.MyAdapter;
-import cc.overwall.overwall.MyButton;
+import cc.overwall.overwall.NodeAdapter;
 import cc.overwall.overwall.R;
 import cc.overwall.overwall.Utils.Tools;
+import jp.co.recruit_lifestyle.android.widget.WaveSwipeRefreshLayout;
+import okhttp3.Call;
 
 import static android.content.Context.MODE_PRIVATE;
 
@@ -40,13 +38,13 @@ public class Fragment2 extends Fragment {
     public static final String NODE = "https://www.overwall.cc/api/node?access_token=";
     private String token;
     public static int times = 1;
-    private ImageView listitemcardmainImageView1;
+/*    private ImageView img_city;
     private MyButton listButtonConnect;
     private TextView listTitle;
     private TextView listSpeed;
     private TextView listInfo;
-    private TextView listBottom;
-
+    private TextView listBottom;*/
+private WaveSwipeRefreshLayout mWaveSwipeRefreshLayout;
 
     private static final String ARG_POSITION = "position";
 
@@ -66,18 +64,30 @@ public class Fragment2 extends Fragment {
         position = getArguments().getInt(ARG_POSITION);
 
         Log.e(TAG, "onCreateView");
-        mRecyclerView =
-                (RecyclerView) inflater.inflate(R.layout.lin, container, false);
-        return mRecyclerView;
+        View mview = inflater.inflate(R.layout.fragment_node, container, false);
+      
+        return mview;
     }
 
     @Override
-    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
+    public  void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
         Log.e(TAG, "onActivityCreated");
         times = 1;
+        mRecyclerView =
+                (RecyclerView) getActivity().findViewById(R.id.recycler_view);
+        mWaveSwipeRefreshLayout = (WaveSwipeRefreshLayout) getActivity().findViewById(R.id.wave_refresh);
+        mWaveSwipeRefreshLayout.setWaveColor(App.preferenceR.getInt("theme_color", Color.BLUE));
         mRecyclerView.setLayoutManager(new LinearLayoutManager(mRecyclerView.getContext()));
-
+        mWaveSwipeRefreshLayout.setOnRefreshListener(new WaveSwipeRefreshLayout.OnRefreshListener() {
+ 
+    @Override
+    public void onRefresh() {
+        getData();
+        mWaveSwipeRefreshLayout.setRefreshing(false);
+    }
+            
+});
 
         SharedPreferences p = getActivity().getSharedPreferences("overwall", MODE_PRIVATE);
         token = p.getString("token", "");
@@ -85,7 +95,29 @@ public class Fragment2 extends Fragment {
     }
 
     void getData() {
-        JsonObjectRequest getDataRequest = new JsonObjectRequest(
+        OkHttpUtils.get()
+                .url(NODE + token)
+                .build()
+                .execute(new StringCallback() {
+                    @Override
+                    public void onError(Call call, Exception e, int i) {
+                        Tools.showToast("网络不好,刷新节点信息失败,重启app试试");
+                    }
+
+                    @Override
+                    public void onResponse(String s, int i) {
+                        try {
+                            JSONObject jsonobj = new JSONObject(s);
+                            if (jsonobj.getInt("ret") != 0)
+                                processNodeData(jsonobj.toString());
+                            else
+                                App.login();
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                });
+       /* JsonObjectRequest getDataRequest = new JsonObjectRequest(
                 Request.Method.GET,  NODE + token,
                 new Response.Listener<JSONObject>() {
 
@@ -117,29 +149,9 @@ public class Fragment2 extends Fragment {
             }
         });
 
-        App.mQueue.add(getDataRequest);
-
-       /* new VolleyRequestUtil().RequestGet(getActivity(), NODE + token, "NODE",
-                new VolleyListenerInterface(getActivity(), VolleyListenerInterface.mListener, VolleyListenerInterface.mErrorListener) {
-                    // Volley请求成功时调用的函数
-                    @Override
-                    public void onMySuccess(String result) {
-                        // Tools.showDebugToast("请求成功");
-                         processNodeData(result);
-                    }
+        App.mQueue.add(getDataRequest);*/
 
 
-                    // Volley请求失败时调用的函数
-                    @Override
-                    public void onMyError(VolleyError error) {
-                        Tools.showToast(error.toString());
-                        if (times < 4) {
-                            getData();
-                            times++;
-                        }
-
-                    }
-                });*/
     }
 
 
@@ -150,26 +162,19 @@ public class Fragment2 extends Fragment {
             String formatedData = Tools.unicode2String(data);
             Log.e(TAG, formatedData);
             NodeInfo nodeinfo = gson.fromJson(formatedData, NodeInfo.class);
-
-
             if (nodeinfo.getRet() == 1) {
-
                 node = nodeinfo.getData();
-
-
             }
-
-
-            Tools.showDebugToast("处理完了");
         } catch (Exception e) {
-            Tools.showDebugToast(e.toString());
+            Log.e(TAG,e.toString());
         }
-
-
-        mRecyclerView.setAdapter(new MyAdapter(node));
-
+        if (mRecyclerView.getAdapter() ==null)
+        mRecyclerView.setAdapter(new NodeAdapter(node));
+        else {
+         ( (NodeAdapter) mRecyclerView.getAdapter()).setNode(node);
+            mRecyclerView.getAdapter().notifyDataSetChanged();
+        }
+         
     }
-
-
 }
 

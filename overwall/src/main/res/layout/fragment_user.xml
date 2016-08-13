@@ -5,7 +5,8 @@
     android:id="@+id/content_frame"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/material_blue_grey_800">
+    android:background="@color/material_blue_grey_800"
+    >
 
     <ScrollView
         android:layout_width="match_parent"
@@ -15,18 +16,24 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical">
+            
+           <!--<android.support.v7.widget.RecyclerView
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:id="@+id/recycler_wavebool"/>-->
 
             <FrameLayout
+                xmlns:android="http://schemas.android.com/apk/res/android"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
                 <cc.overwall.overwall.ui.WaveView
                     android:id="@+id/wave"
+
                     android:layout_width="match_parent"
                     android:layout_height="350dp"
-                    android:layout_centerHorizontal="true"
-                    android:layout_margin="30dp"
-                    />
+                    android:layout_margin="30dp"/>
+
 
                 <TextView
                     android:id="@+id/text_liuliang"
@@ -39,24 +46,28 @@
                     android:textStyle="bold"/>
             </FrameLayout>
 
-            <include layout="@layout/info_1"/>
+            <LinearLayout
+                android:background="#FFFFFF"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
 
-            <include layout="@layout/info_2"/>
+                <include layout="@layout/info_1"/>
 
-            <include layout="@layout/info_3"/>
+                <include layout="@layout/info_2"/>
 
-            <include layout="@layout/info_4"/>
+                <include layout="@layout/info_3"/>
 
-            <include layout="@layout/info_5"/>
+                <include layout="@layout/info_5"/>
 
-            <include layout="@layout/info_6"/>
+                <include layout="@layout/info_6"/>
 
-            <include layout="@layout/info_7"/>
+                <include layout="@layout/info_7"/>
 
-            <include layout="@layout/info_8"/>
+                <include layout="@layout/info_8"/>
 
-            <include layout="@layout/info_9"/>
-
+                <include layout="@layout/info_9"/>
+            </LinearLayout>
         </LinearLayout>
 
     </ScrollView>
@@ -65,8 +76,8 @@
         android:layout_width="fill_parent"
         android:layout_height="fill_parent">
 
-        <cc.overwall.overwall.FloatingActionMyButton
-            android:id="@+id/fabButton"
+        <ImageView
+            android:id="@+id/btn_checkin"
             android:layout_width="72dp"
             android:layout_height="72dp"
             android:layout_alignParentBottom="true"
@@ -76,7 +87,6 @@
             android:layout_margin="16dp"
             android:layout_marginBottom="25dp"
             android:layout_marginRight="20dp"
-            android:background="@color/colorAccent"
             android:textSize="24sp"/>
 
         <cc.overwall.overwall.ProgressBarCircular

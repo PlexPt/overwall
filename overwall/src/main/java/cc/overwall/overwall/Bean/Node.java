@@ -7,6 +7,8 @@ public class Node
     private  String info;
     private  String server;
     private  String status;
+    private  int node_class;
+    private int online;
 
 
     
@@ -64,4 +66,21 @@ public class Node
     public String getStatus()
     {
         return status;
-    }}
+    }
+
+    public int getNode_class() {
+        return node_class;
+    }
+
+    public void setNode_class(int node_class) {
+        this.node_class = node_class;
+    }
+
+    public int getOnline() {
+        return online;
+    }
+
+    public void setOnline(int online) {
+        this.online = online;
+    }
+}

@@ -9,10 +9,8 @@ import android.widget.AutoCompleteTextView;
 import android.widget.EditText;
 import android.widget.TextView;
 
-import com.android.volley.Request;
-import com.android.volley.Response;
-import com.android.volley.VolleyError;
-import com.android.volley.toolbox.JsonObjectRequest;
+import com.zhy.http.okhttp.OkHttpUtils;
+import com.zhy.http.okhttp.callback.StringCallback;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -20,9 +18,10 @@ import org.json.JSONObject;
 import java.util.HashMap;
 import java.util.Map;
 
-import cc.overwall.overwall.App;
 import cc.overwall.overwall.R;
 import cc.overwall.overwall.Utils.Tools;
+import okhttp3.Call;
+import okhttp3.MediaType;
 
 /**
  * Created by xps on 2016/7/13.
@@ -82,11 +81,28 @@ public class RegActivity extends AppCompatActivity {
                 map.put("wechat",qq);
                 map.put("imtype","2");
                 map.put("code",code);
-                 
-                
-                
-                
-            JsonObjectRequest newMissRequest = new JsonObjectRequest(
+
+
+                OkHttpUtils.postString()
+                        .mediaType(MediaType.parse("application/json; charset=utf-8"))
+                        .content(new JSONObject(map).toString())
+                        .build()
+                        .execute(new StringCallback() {
+                            @Override
+                            public void onError(Call call, Exception e, int i) {
+                                Tools.showToast("错误" + e.toString());
+                            }
+
+                            @Override
+                            public void onResponse(String s, int i) {
+                                try {
+                                    deal(new JSONObject(s));
+                                } catch (JSONException e) {
+                                    e.printStackTrace();
+                                }
+                            }
+                        });
+    /*        JsonObjectRequest newMissRequest = new JsonObjectRequest(
                     Request.Method.POST, API_REG,
                     new JSONObject(map), new Response.Listener<JSONObject>() {
 
@@ -111,7 +127,7 @@ public class RegActivity extends AppCompatActivity {
             });
 
             App.mQueue.add(newMissRequest);
-
+*/
 
         }
 

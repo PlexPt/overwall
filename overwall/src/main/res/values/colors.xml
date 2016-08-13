@@ -4,21 +4,29 @@
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
     <color name="window_background">#FFF5F5F5</color>
-    <color name="colorWaterGreen">#00695C</color>
-    <color name="colorWaterGreenDark">#004D40</color>
-    <color name="colorGreen">#33691E</color>
-<color name="wavegreen">#B04CAF50</color>
     
-    
+    <color name="Blue">#3F51B5</color>
+    <color name="Purple">#9c27b0</color>
+    <color name="Pink">#FF4081</color>
+    <color name="Pink_500">#e91e63</color>
+    <color name="WaterGreen">#00695C</color>
+    <color name="WaterGreenDark">#004D40</color>
+    <color name="Green">#33691E</color>
+    <color name="WaveGreen">#B04CAF50</color>
+
+
     <color name="red">#bf360c</color>
     <color name="ripple_red">#ffbf5232</color>
 
     <color name="material_teal">@color/material_deep_teal_500</color>
     <color name="ripple_material_teal">#ff149691</color>
 
-    <color name="blue">#304f9f</color>
+    <color name="LightBlue">#304f9f</color>
     <color name="grey">#233333</color>
     <color name="light">#eeeeee</color>
+    <color name="loading_background">#65828e</color>
+    <color name="loading_main_color">#ff9a00</color>
+    <color name="loading_secondary_color">#BDBDBD</color>
 
     <!--color name="colorPrimary">@color/material_deep_teal_500</color>
     <color name="colorPrimaryDark">@color/material_deep_teal_500</color>
@@ -27,5 +35,5 @@
     <color name="black_translucent">#80000000</color>
     
     -->
-    
+
 </resources>

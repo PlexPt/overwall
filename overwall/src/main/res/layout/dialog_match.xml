@@ -1,0 +1,44 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:match="http://schemas.android.com/apk/res-auto"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#ffffff">
+
+
+    <com.roger.match.library.MatchTextView
+        android:id="@+id/mTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_centerHorizontal="true"
+        match:text="are you ok"
+        match:textColor="#000000"
+        match:textSize="10sp"/>
+
+    <LinearLayout
+        android:layout_marginTop="20dp"
+
+        android:layout_below="@+id/mTextView"
+        android:layout_centerHorizontal="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    <com.roger.match.library.MatchButton
+        android:id="@+id/okButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+      android:layout_weight="1"
+        match:text="OK"
+        match:textColor="#000000"
+        match:textSize="10sp"/>
+        <com.roger.match.library.MatchButton
+            android:id="@+id/noButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            match:text="NO"
+            match:textColor="#000000"
+            match:textSize="10sp"/>
+    </LinearLayout>
+
+</RelativeLayout>

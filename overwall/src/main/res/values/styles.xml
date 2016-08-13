@@ -1,13 +1,10 @@
 <resources>
-
-    <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
-        <!-- Customize your theme here. -->
-
-
+        <item name="colorControlHighlight">#0000AA</item>
         <item name="colorPrimary">#0fb73d</item>
         <item name="colorPrimaryDark">#0ba823</item>
         <item name="colorAccent">#FF4081</item>
+        
         <item name="android:windowBackground">@color/window_background</item>
     </style>
 
@@ -43,5 +40,17 @@
 
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light"/>
 
+    <style name="cart_dialog" parent="@android:style/Theme.Holo.Light.Dialog">
+        <item name="android:windowFrame">@null</item>
+        <!-- 边框 -->
+        <item name="android:windowIsFloating">true</item>
+        <!-- 是否浮现在activity之上 -->
+        <item name="android:windowIsTranslucent">true</item>
+        <!-- 半透明 -->
+        <item name="android:windowNoTitle">true</item>
+        <!-- 背景透明 -->
+        <item name="android:backgroundDimEnabled">true</item>
+        <!-- 模糊 -->
+    </style>
 
 </resources>

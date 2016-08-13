@@ -3,7 +3,23 @@
     <style name="AppTheme.NoActionBar">
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
+        
+        <item name="android:colorPrimaryDark">@color/colorAccent</item>
+        <item name="android:navigationBarColor">@color/colorAccent</item>
         <item name="android:windowDrawsSystemBarBackgrounds">true</item>
         <item name="android:statusBarColor">@android:color/transparent</item>
+    </style>
+
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="colorControlHighlight">#0000AA</item>
+        <item name="colorPrimary">#0fb73d</item>
+        <item name="colorPrimaryDark">#0ba823</item>
+        <item name="colorAccent">#FF4081</item>
+
+        <item name="android:windowBackground">@color/window_background</item>
+        <item name="android:windowContentTransitions">true</item>
+        <item name="android:windowAllowEnterTransitionOverlap">true</item>
+        <item name="android:windowEnterTransition">@android:transition/explode</item>
+        <item name="android:windowExitTransition">@android:transition/explode</item>
     </style>
 </resources>

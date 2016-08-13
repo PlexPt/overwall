@@ -21,5 +21,6 @@
     <string name="pay">请点击支付宝付款进行充值，或者直接填支付宝账号17080035800。\n付款后10秒内系统自动到账。\n目前汇率1人民币=1爱墙币</string>
     <string name="alipay_code">#吱口令#长按复制此条消息，打开支付宝即可添加我为好友m1FB6W00Ey</string>
     <string name="title_activity_err">ErrActivity</string>
+    <string name="invate_warn">付款时请务必备注用户ID,不能有其他内容，只填一个纯数字。</string>
 
 </resources>

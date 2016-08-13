@@ -201,7 +201,7 @@ public class WaveView extends View {
     private void createShader() {
         mDefaultAngularFrequency = 2.0f * Math.PI / DEFAULT_WAVE_LENGTH_RATIO / getWidth();
         mDefaultAmplitude = getHeight() * DEFAULT_AMPLITUDE_RATIO;
-        mDefaultWaterLevel = getHeight() * mWaterLevelRatio;
+        mDefaultWaterLevel = getHeight() * DEFAULT_WATER_LEVEL_RATIO;
         mDefaultWaveLength = getWidth();
 
         Bitmap bitmap = Bitmap.createBitmap(getWidth(), getHeight(), Bitmap.Config.ARGB_8888);

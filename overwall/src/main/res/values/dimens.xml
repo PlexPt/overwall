@@ -6,7 +6,7 @@
     <dimen name="card_margin">8dp</dimen>
     <dimen name="fab_margin">16dp</dimen>
     <dimen name="list_item_avatar_size">40dp</dimen>
-
+    <dimen name="drawable_ring_size">4dip</dimen>
 
     <dimen name="navdrawer_width">260dp</dimen>
 

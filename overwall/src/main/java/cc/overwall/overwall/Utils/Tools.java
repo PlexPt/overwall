@@ -4,7 +4,6 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.support.design.widget.Snackbar;
 import android.util.Base64;
-import android.util.Log;
 import android.view.View;
 import android.webkit.CookieManager;
 import android.webkit.CookieSyncManager;
@@ -31,7 +30,7 @@ public class Tools {
 
 
     public static void showmySnack(View view, String str) {
-        Snackbar.make(view, str, Snackbar.LENGTH_LONG)
+        Snackbar.make(view, str, Snackbar.LENGTH_LONG).setAction("OK",null)
                 .show();
     }
 

@@ -24,7 +24,7 @@
 				android:layout_width="120dp"
 				android:layout_height="70dp"
 				android:background="@drawable/cheese_3"
-				android:id="@+id/listitemcardmainImageView1"/>
+				android:id="@+id/img_city"/>
 
 			<Button
 				android:layout_width="match_parent"
@@ -39,7 +39,7 @@
 
 		<LinearLayout
 			android:layout_width="match_parent"
-			android:layout_height="match_parent"
+			android:layout_height="wrap_content"
 			android:layout_marginLeft="16dp"
 			android:orientation="vertical">
 
@@ -71,6 +71,14 @@
 				android:text="自由的网络，启迪你的人生；激情的速度，陶治你的情操，洗礼你的耳朵……"
 				android:id="@+id/list_info"/>
 
+			<TextView
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_marginTop="4dp"
+				android:textSize="12sp"
+				android:text="连接人数:"
+				android:textColor="@color/colorAccent"
+				android:id="@+id/list_online"/>
 			<TextView
 				android:layout_width="match_parent"
 				android:layout_height="wrap_content"
